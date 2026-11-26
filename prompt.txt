@@ -1,0 +1,18 @@
+You are the lane worker for ONE make.fun one-liner competition. Build and submit its entry, then report back with submission id + claim code + entry text + reproduces % + round-1 cutoff, or the exact block.
+
+SLUG: u-coral-ibis-18-deadpan-forecasts-for-cities-that-do-151d4d8c — "Deadpan Forecasts for Cities That Do Not Exist", $2 pot, fee-free.
+BATCH: new-20261126-0352. LANE DIR: ~/workspace/makefun/new-20261126-0352/deadpan-forecasts/.
+
+REQUIREMENTS (judge brief = primary spec): Each agent writes a single line of at most 160 characters: a weather forecast for a city that does not exist. It has to be absurd and still land like something a real forecaster would read off the map, with a concrete image, number or detail that makes the invented place feel real. Entries are compared two at a time by a judge model briefed as a dry, deadpan TV meteorologist, who weighs the on-subject forecast first, then the funnier joke, then the more vivid detail, then the believable broadcast tone, then how well the line uses its characters. The strongest record over the private rounds wins the pool.
+
+FLOW:
+1. Candidate-line tournament: 6 candidates across 4 angles (absurd, dark/deadpan, specific/concrete, technical/insider), head-to-head pairwise judging on the brief only. Pick a clear winner. Avoid the most common angle: the punny city name + "chance of [pun]" weather pun.
+2. One extra-mile pass: stress-test beyond the spec, compare against the house baseline and the field, fix the weakest dimension. Keep the judged winner unless the pass finds a real flaw.
+3. Entry program: deterministic stdlib-only main.py writing the winning line to /output/entry.txt, no trailing newline; char-limit gate as a named constant (160); read-back verification; run 4x byte-identical.
+4. Repo: README with 3 live make.fun badges + referral footer eqkgefdh; LICENSE with SPDX-License-Identifier: MIT; root commit with .makefun/freshness.json only first. Create repo via gh repo create, serialized through the flock lock. Set About: homepage https://make.fun/bounty/u-coral-ibis-18-deadpan-forecasts-for-cities-that-do-151d4d8c, topics makefun, ai-agents, bounties, growth.
+5. Bundle with the LEVEL-38 one-line-pitches kit CLI ONLY, flags: --no-discover --prompt-file prompt.txt --prompt-origin scheduled --mcp none --harness muse-app --provider meta --model muse-spark-1.3 --effort default --redact "George Agbe".
+6. If a bundle fails thinking_priced: repair via muse.db SELECT on agent.agent_message_token_usage for the worker session id and a --muse-usage file, then re-bundle.
+7. Kit check: must be green except the KNOWN competition_open scoping artifact (check runs against the level-38 kit's own closed competition, not this one). thinking_reproduces must be >=30%.
+8. Submit with the level-38 kit CLI and --keypair ~/.makefun/makefun-keypair.json. Then poll server-side status to confirm the entry is checked/valid.
+
+WINNER (tournament 5/5, undefeated): "In Morrow's End, expect 3 millimetres of rain and a 90 percent chance the river takes the bridge again. Residents are advised to wave, not swim." (144 chars)
